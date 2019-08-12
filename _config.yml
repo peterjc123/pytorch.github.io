@@ -16,7 +16,7 @@ sass:
   load_paths:
     - _sass
     - node_modules
-exclude: [vendor, node_modules, README.md, Gemfile, Gemdile.lock, yarn.lock, yarn-error.log, package.json, Makefile, scripts]
+exclude: [vendor, node_modules, README.md, Gemfile, Gemdile.lock, yarn.lock, yarn-error.log, package.json, Makefile, scripts, _hub/docs/template.md]
 include: [_static, _images, _modules, _sources, _tensor_str.html, _utils.html]
 keep_files: [vendor/assets, docs/master/_static/js/vendor/]
 github: [metadata]
@@ -40,6 +40,9 @@ collections:
   ecosystem:
     output: true
     permalink: /ecosystem/:path/
+  hub:
+    output: true
+    permalink: /hub/:title/
   case_studies:
     output: true
     permalink: /case-studies/:path/

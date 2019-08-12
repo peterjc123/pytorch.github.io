@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # ideas used from https://gist.github.com/motemen/8595451
 
 # Based on https://github.com/eldarlabs/ghpages-deploy-script/blob/master/scripts/deploy-ghpages.sh
@@ -6,6 +6,18 @@
 
 # abort the script if there is a non-zero error
 set -e
+
+# initialize hub submodule
+git submodule deinit -f . && git submodule update --init --recursive
+
+# use latest hub
+./_devel/update_hub_submodule.sh
+
+# Files not related to build should be deleted.
+pushd _hub
+rm -R `ls -1 -d */`
+rm -f README.md
+popd
 
 # show where we are on the machine
 pwd
